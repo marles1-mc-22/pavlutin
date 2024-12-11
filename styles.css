@@ -1,0 +1,154 @@
+/* Основной стиль страницы */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #2d9d56;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Меню и выбор темы */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #4caf50;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+nav a:hover {
+    background-color: #45a049;
+}
+
+/* Бегущая строка */
+.scrolling-text {
+    background-color: #333;
+    color: white;
+    padding: 5px 0;
+    font-size: 20px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.scrolling-text span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll-text 20s linear infinite;
+}
+
+@keyframes scroll-text {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Основное содержание страницы */
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* Левый блок */
+.left-block {
+    flex: 0 0 30%;
+    margin-right: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.left-block img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Правая часть */
+.right-block {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 48%;
+}
+
+.right-item {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.right-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Подвал */
+footer {
+    background-color: #2d9d56;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .left-block {
+        flex: 0 0 100%;
+        margin-right: 0;
+    }
+
+    .right-block {
+        flex-direction: column;
+    }
+
+    .column {
+        width: 100%;
+    }
+}
